@@ -18,5 +18,8 @@
   "homepage": "https://github.com/DrewAlexander98/ReaccNuke#readme",
   "dependencies": {
     "discord.js": "^11.4.2"
-  }
+  },
+  "scripts": {
+    "start": "node app.js"
+}
 }
