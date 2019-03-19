@@ -17,7 +17,7 @@ client.on('ready', () => {
 client.on('messageReactionAdd', reacc => {
   
   if (reacc.emoji.name === '💥') {
-    for (let index = 0; index < 10; index++) {
+    for (let index = 0; index < 20; index++) {
       var emote = emojis[Math.floor(Math.random() * emojis.length)];
       console.log("Reacting:" + emote);
       reacc.message.react(emote).catch(error => {
