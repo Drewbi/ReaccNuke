@@ -1,0 +1,22 @@
+{
+  "name": "reaccnuke",
+  "version": "1.0.0",
+  "description": "Discord bot for flooding a message with reactions",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DrewAlexander98/ReaccNuke.git"
+  },
+  "author": "Drew Alexander",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/DrewAlexander98/ReaccNuke/issues"
+  },
+  "homepage": "https://github.com/DrewAlexander98/ReaccNuke#readme",
+  "dependencies": {
+    "discord.js": "^11.4.2"
+  }
+}
