@@ -14,12 +14,9 @@ client.on('messageReactionAdd', reacc => {
     for (let index = 0; index < 19; index++) {
       var emote = emojis[Math.floor(Math.random() * emojis.length)];
       console.log("Reacting:" + emote);
-      try {
-        reacc.message.react(emote);
-      } catch (err) {
+      reacc.message.react(emote).catch(error => {
         console.log("Emote limit reached");
-        break;
-      }
+      });
     }
   }
 });
