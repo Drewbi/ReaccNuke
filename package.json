@@ -4,7 +4,7 @@
   "description": "Discord bot for flooding a message with reactions",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node app.js"
   },
   "repository": {
     "type": "git",
@@ -17,9 +17,7 @@
   },
   "homepage": "https://github.com/DrewAlexander98/ReaccNuke#readme",
   "dependencies": {
-    "discord.js": "^11.4.2"
-  },
-  "scripts": {
-    "start": "node app.js"
-}
+    "discord.js": "^11.4.2",
+    "dotenv": "^7.0.0"
+  }
 }
