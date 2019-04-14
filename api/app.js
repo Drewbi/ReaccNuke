@@ -12,7 +12,7 @@ http.createServer(function (request, response) {
 }).listen(process.env.PORT || 5000);
 
 client.on('ready', () => {
-  console.log(`Logged in as ${client.user.tag}!`);
+  console.log(`Logged in as ${client.user.tag}`);
 });
 
 client.on('messageReactionAdd', reacc => {

@@ -2,9 +2,9 @@
   "name": "reaccnuke",
   "version": "1.0.0",
   "description": "Discord bot for flooding a message with reactions",
-  "main": "app.js",
+  "main": "api/app.js",
   "scripts": {
-    "start": "node ."
+    "start": "node api/app.js"
   },
   "repository": {
     "type": "git",
