@@ -8,7 +8,7 @@ var emojis = [
 
 http.createServer(function (request, response) {
   response.writeHead(200, {'Content-Type': 'text/plain'});
-  response.end('ReaccNuke here\n');
+  response.end('index.html');
 }).listen(process.env.PORT || 5000);
 
 client.on('ready', () => {
