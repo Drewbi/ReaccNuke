@@ -62,7 +62,6 @@ client.on('messageReactionAdd', reacc => {
       console.log("Reacting:" + emote);
       reacc.message.react(emote).catch(error => {
         console.log("Emote limit reached");
-        return;
       });
     }
   }
