@@ -1,5 +1,6 @@
 require('dotenv').config()
 const http = require("http");
+const fs = require("fs");
 const Discord = require('discord.js');
 const client = new Discord.Client();
 var emojis = [
@@ -44,11 +45,12 @@ var emojis = [
   '🔃','🕛','🕧','🕐','🕜','🕑','🕝','🕒','🕞','🕓','🕟','🕔','🕠','🕕','🕖','🕗','🕘','🕙',
   '🕚','🕡','🕢','🕣','🕤','🕥','🕦','✖','➕','➖','➗','♠','♥','♣','♦','💮','💯','✔','☑','🔘','🔗',
   '➰','🔱','🔲','🔳','◼','◻','◾','◽','▪','▫','🔺','⬜','⬛','⚫','⚪','🔴','🔵','🔻','🔶','🔷','🔸','🔹'
-];
+]; 
 
 http.createServer(function (request, response) {
-  response.writeHead(200, {'Content-Type': 'text/plain'});
-  response.end('index.html');
+  var homePage = fs.readFileSync("index.html")
+  response.writeHead(200, {'Content-Type': 'text/html'});
+  response.end(homePage);
 }).listen(process.env.PORT || 5000);
 
 client.on('ready', () => {
