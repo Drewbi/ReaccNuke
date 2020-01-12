@@ -57,16 +57,29 @@ client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}`);
 });
 
-client.on('messageReactionAdd', reacc => {
+client.on('messageReactionAdd', async reacc => {
   if (reacc.emoji.name === '💥') {
-    for (let index = 0; index < 20; index++) {
-      var emote = emojis[Math.floor(Math.random() * emojis.length)];
-      console.log("Reacting:" + emote);
-      reacc.message.react(emote).catch(error => {
-        console.log("Emote limit reached");
-      });
-    }
+    const startEmote = pickEmote(emojis)
+    spamEmotes(startEmote, reacc)
   }
 });
+
+const pickEmote = (emoteArray) => {
+  const emoteNum = Math.floor(Math.random() * emoteArray.length)
+  return emoteArray[emoteNum]
+}
+
+const spamEmotes = async (emote, reacc) => {
+  try {
+    await reacc.message.react(emote)
+    console.log('sent ' + emote)
+  } catch (DiscordAPIError) {
+    console.log('Emote limit reached')
+    return null
+  }
+  const newEmote = pickEmote(emojis)
+  spamEmotes(newEmote, reacc)
+  return emote
+}
 
 client.login(process.env.TOKEN);
