@@ -79,7 +79,6 @@ const spamEmotes = async (emote, reacc) => {
   }
   const newEmote = pickEmote(emojis)
   spamEmotes(newEmote, reacc)
-  return emote
 }
 
 client.login(process.env.TOKEN);
